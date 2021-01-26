@@ -33,7 +33,8 @@ jobs:
       - name: Docker build
         working-directory: ./
         run: |
-          docker build --build-arg secret=${{ secrets.SECRET_KEY_BASE }} -t ${{ secrets.DOCKER_REGISTRY }}/setgame-server .
+          docker build --help
+          docker build --build-arg secret=${{ secrets.SECRET_KEY_BASE }} --tag ${{ secrets.DOCKER_REGISTRY }}/setgame-server .
           docker tag ${{ secrets.DOCKER_REGISTRY }}/setgame-server ${{ secrets.DOCKER_REGISTRY }}/setgame-server:$NOW
           docker image push ${{ secrets.DOCKER_REGISTRY }}/setgame-server
         env:
