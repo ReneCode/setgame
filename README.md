@@ -8,6 +8,8 @@ To start your Phoenix server:
 
 ## dockerize
 
+https://dwarfte.ch/2020/05/23/deploy-a-phoenix-app-to-microsoft-azure-with-docker/
+
 https://gist.github.com/jswny/83e03537830b0d997924e8f1965d88bc
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.

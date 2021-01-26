@@ -46,8 +46,8 @@ RUN chown nobody:nobody /app
 
 USER nobody:nobody
 
-COPY --from=build --chown=nobody:nobody /app/_build/prod/rel/my_app ./
+COPY --from=build --chown=nobody:nobody /app/_build/prod/rel/setgame ./
 
 ENV HOME=/app
 
-CMD ["bin/my_app", "start"]
+CMD ["bin/setgame", "start"]
