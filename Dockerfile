@@ -1,10 +1,12 @@
+# ======================================
+#
 FROM elixir:1.9.4-alpine AS build
-
-ARG secret
-ENV SECRET_KEY_BASE=$secret
 
 # install build dependencies
 RUN apk add --no-cache build-base npm git python
+
+ARG secret
+ENV SECRET_KEY_BASE=$secret
 
 # prepare build dir
 WORKDIR /app
@@ -36,9 +38,11 @@ COPY lib lib
 # COPY rel rel
 RUN mix do compile, release
 
+# ======================================
 # prepare release image
 FROM alpine:3.9 AS app
 RUN apk add --no-cache openssl ncurses-libs libcap
+# RUN apk add --no-cache build-base npm git python
 
 WORKDIR /app
 
