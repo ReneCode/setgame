@@ -57,6 +57,4 @@ COPY --from=build --chown=nobody:nobody /app/_build/prod/rel/setgame ./
 
 ENV HOME=/app
 
-EXPOSE 4000
-
 CMD ["bin/setgame", "start"]
