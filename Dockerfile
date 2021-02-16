@@ -1,9 +1,10 @@
 # ======================================
 #
-FROM elixir:1.11.3 AS build
+FROM elixir:1.11.3-alpine AS build
 
 # install build dependencies
-RUN apk add --no-cache build-base npm git python
+RUN apk add --no-cache build-base npm git
+# RUN apk add --no-cache build-base npm git python
 
 ARG secret
 ENV SECRET_KEY_BASE=$secret
@@ -55,5 +56,6 @@ COPY --from=build --chown=nobody:nobody /app/_build/prod/rel/setgame ./
 # RUN setcap 'cap_net_bind_service=+eip' /app/erts-10.4.4/bin/beam.smp
 
 ENV HOME=/app
+ENV PORT=80
 
 CMD ["bin/setgame", "start"]
