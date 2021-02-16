@@ -1,0 +1,1 @@
+docker build -t elixir-app --build-arg secret=xhA4t4VXs7zQjuhwdZjFWfHt0WepuD3nQEuqXBzivRCWBKpv37QWwVwg8WWmJTwH .

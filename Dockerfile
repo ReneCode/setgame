@@ -56,6 +56,5 @@ COPY --from=build --chown=nobody:nobody /app/_build/prod/rel/setgame ./
 # RUN setcap 'cap_net_bind_service=+eip' /app/erts-10.4.4/bin/beam.smp
 
 ENV HOME=/app
-ENV PORT=80
 
 CMD ["bin/setgame", "start"]
