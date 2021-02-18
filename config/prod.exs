@@ -10,6 +10,7 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :setgame, SetgameWeb.Endpoint,
+  code_reloader: true,
   check_origin: ["//localhost:5000", "//setgame-server.azurewebsites.net"],
   url: [host: "setgame-server.azurewebsites.net", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
