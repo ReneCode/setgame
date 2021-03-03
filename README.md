@@ -1,5 +1,53 @@
 # Setgame
 
+# directories
+
+controllers, templates, views for web pages
+
+channels for websocket
+
+gettext.ex is for internationalization of strings
+
+## web page
+
+```
+// router.ex
+
+defmodule RifferWeb.Router
+...
+get "/", HomeController, :index
+```
+
+```
+// controllers/home_controller.ex
+
+defmodule RifferWeb.HomeController do
+  use RifferWeb, :controller
+
+  def index(conn, _params) do
+    render(conn, "index.html")
+  end
+end
+```
+
+```
+// views/home_view.ex
+
+defmodule SetgameWeb.HomeView do
+  use RifferWeb, :view
+end
+```
+
+```
+// templates/home/index.html.eex
+
+<div>
+<p>Hello - Homepage</p>
+</div>
+```
+
+# start
+
 To start your Phoenix server:
 
 - Install dependencies with `mix deps.get`
@@ -27,3 +75,7 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 - Docs: https://hexdocs.pm/phoenix
 - Forum: https://elixirforum.com/c/phoenix-forum
 - Source: https://github.com/phoenixframework/phoenix
+
+```
+
+```
