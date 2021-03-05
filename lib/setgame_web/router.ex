@@ -23,9 +23,11 @@ defmodule SetgameWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", SetgameWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", SetgameWeb do
+    pipe_through :api
+
+    resources "/job", JobController
+  end
 
   # Enables LiveDashboard only for development
   #

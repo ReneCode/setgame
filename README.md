@@ -27,6 +27,16 @@ defmodule RifferWeb.HomeController do
   def index(conn, _params) do
     render(conn, "index.html")
   end
+
+  // or just output blank text
+  def other_index(conn, _params) do
+    text(conn, "hello world text")
+  end
+
+  // or just json output
+  def other_index(conn, _params) do
+    json(conn, %{name: "Paul Smith", id: 42})
+  end
 end
 ```
 
@@ -35,6 +45,11 @@ end
 
 defmodule SetgameWeb.HomeView do
   use RifferWeb, :view
+
+  // function that is called from home/index.html.eex
+  defp text() do
+    "my name"
+  end
 end
 ```
 
@@ -43,6 +58,7 @@ end
 
 <div>
 <p>Hello - Homepage</p>
+<p><%= text() %></p>
 </div>
 ```
 
